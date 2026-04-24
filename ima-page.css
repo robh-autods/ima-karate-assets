@@ -1,17 +1,16 @@
 /* ------ FIX: hide template's Josh Steven / BJJ instructor widget ------ */
-  /* Webflow MMA template ships with a "Head Coach" instructor profile card
-     that renders via data-w-id inside the programs area. Hide all variants. */
-  .section.third-section .instructor-card,
-  .section.third-section .instructor-profile,
-  .section.third-section .instructor-wrapper,
-  .section.third-section .coach-card,
-  .section.third-section .memberstack-profile,
-  .section.third-section [class*="instructor"],
-  .section.third-section [class*="coach"],
-  .section.third-section [class*="profile-card"],
-  .section.third-section .ms-modal,
-  .section.third-section .w-commerce-commerceitemslist,
-  .ima-hide { display: none !important; visibility: hidden !important; }
+  /* Uses .ima-hide class — applied by JS to stray template widgets. */
+  .ima-hide,
+  .ima-hide * { display: none !important; visibility: hidden !important; }
+
+  /* Also globally hide the Webflow shopping-cart widget overlay that some
+     MMA templates render as a floating element on the home page. */
+  .main.marketing-main > .w-commerce-commercecartwrapper,
+  .nav-cart.w-commerce-commercecartwrapper ~ .w-commerce-commercecartcontainerwrapper,
+  .section.second-section .w-commerce-commercecartwrapper,
+  .section.second-section .w-commerce-commercecartcontainerwrapper,
+  .section.third-section .w-commerce-commercecartwrapper,
+  .section.third-section .w-commerce-commercecartcontainerwrapper { display: none !important; }
 
   /* ------ FIX: force our rebuilt sections onto dark backgrounds ------ */
   /* The MMA template's .user-guide-section and surrounding blocks inherit

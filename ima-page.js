@@ -1,5 +1,4 @@
-// IMA Karate — Webflow page enhancer
-// Source: /home/user/workspace/webflow-footer-code-v2.html
+// IMA Karate page enhancer
 (function(){
   var IMG = {
     hero: "https://cdn.jsdelivr.net/gh/robh-autods/ima-karate-assets@main/2021-Team-Photo-in-Track-Suits-1536x1024.jpg",
@@ -27,12 +26,16 @@
   function hideExtras(container){
     if(!container) return;
     // Hide any template-provided "Head Coach"/instructor profile widgets
-    $$('[data-w-id]', container).forEach(function(el){
+    // that render BEFORE our content replacement.
+    $$('[data-w-id], .w-dyn-list, .w-commerce-commercecartwrapper, .w-commerce-commercecartcontainerwrapper', container).forEach(function(el){
+      // Never touch our own injected elements
+      if(el.className && typeof el.className === 'string' &&
+         (el.className.indexOf('ima-') === 0 || el.className.indexOf(' ima-') > -1)) return;
       var t = (el.textContent||'').toLowerCase();
       if(t.indexOf('josh steven')>-1 || t.indexOf('head bjj')>-1 ||
-         t.indexOf('head coach')>-1 || t.indexOf('view instructor')>-1 ||
-         t.indexOf('brazilian jiu')>-1){
-        var parent = el.closest('.container, .column, .section') || el;
+         t.indexOf('head coach')>-1 || t.indexOf('view instructor profile')>-1 ||
+         t.indexOf('brazilian jiu')>-1 || t.indexOf('your cart')>-1){
+        var parent = el.closest('.container, .column') || el;
         if(parent && !parent.classList.contains('section')){
           parent.classList.add('ima-hide');
         } else {
@@ -70,7 +73,8 @@
     // ============ 3. INTRO ============
     var intro = $('.section.intro-section');
     if(intro){
-      var introImg = $('img', intro);
+      // Target the main template image (has class 'marketing-image-mobile')
+      var introImg = $('img.marketing-image-mobile', intro) || $('img', intro);
       replaceImg(introImg, IMG.adultClass, 'IMA Karate adult class training');
 
       var introH2 = $('.section-heading-large', intro);
@@ -106,7 +110,7 @@
         'Our members include athletes on the <strong>USA Karate National Team</strong> and National champions across divisions — currently 6 IMA students are members of the US National Team.'
       );
 
-      var compImg = $('img', comp);
+      var compImg = $('img.marketing-image-mobile', comp) || $('img', comp);
       replaceImg(compImg, IMG.compTeam, 'IMA Competition Team');
 
       var compBtns = $$('.button', comp);
