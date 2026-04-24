@@ -1,0 +1,245 @@
+/* ------ FIX: hide template's Josh Steven / BJJ instructor widget ------ */
+  /* Webflow MMA template ships with a "Head Coach" instructor profile card
+     that renders via data-w-id inside the programs area. Hide all variants. */
+  .section.third-section .instructor-card,
+  .section.third-section .instructor-profile,
+  .section.third-section .instructor-wrapper,
+  .section.third-section .coach-card,
+  .section.third-section .memberstack-profile,
+  .section.third-section [class*="instructor"],
+  .section.third-section [class*="coach"],
+  .section.third-section [class*="profile-card"],
+  .section.third-section .ms-modal,
+  .section.third-section .w-commerce-commerceitemslist,
+  .ima-hide { display: none !important; visibility: hidden !important; }
+
+  /* ------ FIX: force our rebuilt sections onto dark backgrounds ------ */
+  /* The MMA template's .user-guide-section and surrounding blocks inherit
+     a light/red scheme. Our schedule/dojo-kun/instructors must stay dark. */
+  .section.third-section.user-guide-section,
+  .section.third-section.user-guide-section .column,
+  .section.third-section.user-guide-section .container,
+  .section.third-section.user-guide-section .column.light-column {
+    background: #0a0a0a !important;
+    background-color: #0a0a0a !important;
+    color: #eee !important;
+  }
+  .section.third-section.user-guide-section .section-heading-large,
+  .section.third-section.user-guide-section h2,
+  .section.third-section.user-guide-section h3 {
+    color: #fff !important;
+  }
+  .section.third-section.user-guide-section .light-paragraph,
+  .section.third-section.user-guide-section p {
+    color: #cfcfcf !important;
+  }
+
+  /* Ensure our injected programs section also stays dark */
+  .section.third-section:not(.user-guide-section) {
+    background: #111 !important;
+  }
+
+  /* ------ Programs grid ------ */
+  .ima-programs-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+    margin-top:24px;
+  }
+  .ima-program-card{
+    background:#1a1a1a;
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:6px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    transition:transform .25s ease, box-shadow .25s ease;
+    min-height:320px;
+  }
+  .ima-program-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 30px rgba(0,0,0,.5);
+  }
+  .ima-program-imgwrap{
+    aspect-ratio:4/3;
+    width:100%;
+    overflow:hidden;
+    background:#000;
+    position:relative;
+  }
+  .ima-program-imgwrap img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .ima-program-body{
+    padding:22px;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+  }
+  .ima-program-body h3{
+    margin:0 0 6px !important;
+    font-size:22px !important;
+    color:#fff !important;
+    font-family:Oswald, sans-serif !important;
+    letter-spacing:1px !important;
+    text-transform:uppercase !important;
+  }
+  .ima-program-age{
+    color:#d4a24a;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:12px;
+  }
+  .ima-program-body p{
+    color:#cfcfcf !important;
+    font-size:15px !important;
+    line-height:1.55 !important;
+    margin:0 !important;
+  }
+  @media (max-width:900px){
+    .ima-programs-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:560px){
+    .ima-programs-grid{grid-template-columns:1fr}
+  }
+
+  /* ------ Class Schedule ------ */
+  .ima-sched-grid{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:14px;
+    margin-top:24px;
+  }
+  .ima-sched-day{
+    background:rgba(255,255,255,0.04);
+    border-top:3px solid #c8102e;
+    padding:18px 14px;
+    border-radius:4px;
+    min-height:160px;
+  }
+  .ima-sched-day h4{
+    font-family:Oswald, sans-serif !important;
+    font-size:14px !important;
+    letter-spacing:2px !important;
+    text-transform:uppercase !important;
+    color:#c8102e !important;
+    margin:0 0 12px !important;
+    padding-bottom:6px !important;
+    border-bottom:1px solid rgba(255,255,255,.12) !important;
+  }
+  .ima-sched-slot{margin-bottom:10px;font-size:13.5px;color:#eee !important}
+  .ima-sched-slot strong{display:block;color:#fff !important;font-size:13px;font-weight:600}
+  .ima-sched-slot .ima-sched-time{color:#aaa !important;font-size:12.5px}
+  .ima-sched-note{
+    text-align:center;color:#ccc !important;margin-top:24px;font-size:15px;
+  }
+  @media (max-width:900px){
+    .ima-sched-grid{grid-template-columns:repeat(3,1fr)}
+  }
+  @media (max-width:560px){
+    .ima-sched-grid{grid-template-columns:repeat(2,1fr)}
+  }
+
+  /* ------ Instructors ------ */
+  .ima-instructors-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:24px;
+    margin-top:24px;
+    text-align:left;
+  }
+  .ima-ins-card{
+    background:rgba(255,255,255,0.04);
+    border-left:4px solid #c8102e;
+    padding:22px;
+    border-radius:0 6px 6px 0;
+  }
+  .ima-ins-card h4{
+    margin:0 0 4px !important;
+    font-family:Oswald, sans-serif !important;
+    font-size:18px !important;
+    color:#fff !important;
+    letter-spacing:1px !important;
+    text-transform:uppercase !important;
+  }
+  .ima-ins-rank{
+    color:#d4a24a;
+    font-weight:700;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    margin-bottom:10px;
+    display:block;
+  }
+  .ima-ins-card p{color:#cfcfcf !important;font-size:14.5px !important;line-height:1.55 !important;margin:0 !important}
+  @media (max-width:700px){
+    .ima-instructors-grid{grid-template-columns:1fr}
+  }
+
+  /* ------ Dojo Kun ------ */
+  .ima-kun-list{
+    max-width:700px;
+    margin:24px auto 0;
+    display:grid;
+    gap:12px;
+    list-style:none;
+    padding:0;
+  }
+  .ima-kun-list li{
+    padding:14px 18px;
+    border:1px solid rgba(255,255,255,.18);
+    color:#fff !important;
+    font-size:17px;
+    letter-spacing:1px;
+    text-align:center;
+    background:rgba(0,0,0,.25);
+  }
+
+  /* ------ Benefits list ------ */
+  .ima-benefits-list{
+    list-style:none !important;
+    padding:0 !important;
+    margin:16px 0 0 !important;
+  }
+  .ima-benefits-list li{
+    position:relative;
+    padding:10px 0 10px 28px !important;
+    border-bottom:1px solid rgba(255,255,255,.1);
+    color:#ddd !important;
+    font-size:15.5px;
+  }
+  .ima-benefits-list li:before{
+    content:"✦";
+    position:absolute;
+    left:0;
+    color:#c8102e;
+    font-weight:700;
+  }
+
+  /* ------ Section helpers ------ */
+  .ima-section-eyebrow{
+    display:block;
+    color:#d4a24a !important;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  .ima-divider{
+    width:60px;
+    height:3px;
+    background:#c8102e;
+    margin:12px 0 22px;
+  }
+  .ima-center{text-align:center}
+  .ima-center .ima-divider{margin-left:auto;margin-right:auto}
+
+  /* Spacing between our synthetic sub-sections inside user-guide-section */
+  .ima-subsection{padding:60px 0}
+  .ima-subsection:first-child{padding-top:0}
