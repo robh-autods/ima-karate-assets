@@ -2,16 +2,16 @@
 // Source: /home/user/workspace/webflow-footer-code-v2.html
 (function(){
   var IMG = {
-    hero: "https://raw.githubusercontent.com/robh-autods/ima-karate-assets/main/2021-Team-Photo-in-Track-Suits-1536x1024.jpg",
-    adultClass: "https://raw.githubusercontent.com/robh-autods/ima-karate-assets/main/adult-class-1536x1152.jpg",
-    tinyTigers: "https://raw.githubusercontent.com/robh-autods/ima-karate-assets/main/Tiny-Tigers.jpg",
-    tinyTigersClass: "https://raw.githubusercontent.com/robh-autods/ima-karate-assets/main/Tiny-Tigers-Class.jpg",
-    tinyTigerPhoto: "https://raw.githubusercontent.com/robh-autods/ima-karate-assets/main/tiny-tiger-photo.jpg",
-    littleDragons: "https://raw.githubusercontent.com/robh-autods/ima-karate-assets/main/little-dragons.jpg",
-    youth: "https://raw.githubusercontent.com/robh-autods/ima-karate-assets/main/Youth.jpg",
-    youthClass: "https://raw.githubusercontent.com/robh-autods/ima-karate-assets/main/youth-class.jpg",
-    teen: "https://raw.githubusercontent.com/robh-autods/ima-karate-assets/main/Teen.jpg",
-    compTeam: "https://raw.githubusercontent.com/robh-autods/ima-karate-assets/main/Comp-Team.jpg",
+    hero: "https://cdn.jsdelivr.net/gh/robh-autods/ima-karate-assets@main/2021-Team-Photo-in-Track-Suits-1536x1024.jpg",
+    adultClass: "https://cdn.jsdelivr.net/gh/robh-autods/ima-karate-assets@main/adult-class-1536x1152.jpg",
+    tinyTigers: "https://cdn.jsdelivr.net/gh/robh-autods/ima-karate-assets@main/Tiny-Tigers.jpg",
+    tinyTigersClass: "https://cdn.jsdelivr.net/gh/robh-autods/ima-karate-assets@main/Tiny-Tigers-Class.jpg",
+    tinyTigerPhoto: "https://cdn.jsdelivr.net/gh/robh-autods/ima-karate-assets@main/tiny-tiger-photo.jpg",
+    littleDragons: "https://cdn.jsdelivr.net/gh/robh-autods/ima-karate-assets@main/little-dragons.jpg",
+    youth: "https://cdn.jsdelivr.net/gh/robh-autods/ima-karate-assets@main/Youth.jpg",
+    youthClass: "https://cdn.jsdelivr.net/gh/robh-autods/ima-karate-assets@main/youth-class.jpg",
+    teen: "https://cdn.jsdelivr.net/gh/robh-autods/ima-karate-assets@main/Teen.jpg",
+    compTeam: "https://cdn.jsdelivr.net/gh/robh-autods/ima-karate-assets@main/Comp-Team.jpg",
   };
 
   function $(sel, ctx){ return (ctx||document).querySelector(sel); }
